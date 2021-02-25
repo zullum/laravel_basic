@@ -39,5 +39,10 @@ Route::get('/pizzas', function () {
         "price" => 5, 
         ]
     ];
-    return view('pizzas', ["pizzas" => $pizzas]);
+
+    $name = request('name');
+    return view('pizzas', [
+        "pizzas" => $pizzas,
+        "name" => $name,
+        ]);
 });

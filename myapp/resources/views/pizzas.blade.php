@@ -19,7 +19,7 @@
 
 <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
     <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-        <h1>Pizzas</h1>
+        <h1 class="title">Pizzas</h1>
     </div>
     {{-- <p>{{ $type }} {{$base}}</p> --}}
     {{-- @if($price >= 15)
@@ -41,6 +41,10 @@
     {{-- @for ($i = 0; $i < 5; $i++)
         <p>the value of i is {{ $i }}</p>
     @endfor --}}
+    @if ($name != null)
+    <p>{{ $name }}</p>
+    @endif
+    
 
     @foreach ($pizzas as $pizza)
         <div>
