@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PizzaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,28 +22,6 @@ Route::get('/testjson', function () {
     return view('testjson');
 });
 
-Route::get('/pizzas', function () {
-    $pizzas = [
-        [
-        "type" => "Hawaiian", 
-        "base" => "cheesy crust",
-        "price" => 15, 
-        ],
-        [
-        "type" => "mexico", 
-        "base" => "garlic crust",
-        "price" => 10, 
-        ],
-        [
-        "type" => "Vegi", 
-        "base" => "vegi crust",
-        "price" => 5, 
-        ]
-    ];
+Route::get('/pizzas',  [PizzaController::class, 'index']);
 
-    $name = request('name');
-    return view('pizzas', [
-        "pizzas" => $pizzas,
-        "name" => $name,
-        ]);
-});
+Route::get('/pizzas/{id}',  [PizzaController::class, 'show']);

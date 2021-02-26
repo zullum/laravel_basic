@@ -44,7 +44,9 @@
     @if ($name != null)
     <p>{{ $name }}</p>
     @endif
-    
+    @if ($age != null)
+    <p>{{ $age }}</p>
+    @endif
 
     @foreach ($pizzas as $pizza)
         <div>
